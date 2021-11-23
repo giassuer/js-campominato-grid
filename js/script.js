@@ -12,43 +12,33 @@ let numberSquare = [];
 
 console.log(numberSquare);
 
-for (let i = 0; i <= numberSquare.length; i++) {
-    const number = numberSquare[i];
-
-    console.log(number);
-    
-}
-
-
-console.log(numberSquare);
-
-for (let i = 0; i <= numberSquare.length; i++) {
-    const number = numberSquare[i];
-
-    console.log(number);
-    
-}
-
-
-console.log(numberSquare);
-
-for (let i = 0; i <= numberSquare.length; i++) {
-    const number = numberSquare[i];
-
-    console.log(number);
-    
-}
+let lunghezza = 0;
 
 
 let difficoltà = 'facile';
 
 
-if (difficoltà = 'facile') {
-    numberSquare.length = 100
+if (difficoltà === 'facile') {
+    lunghezza = 100
     
-}else if (difficoltà = 'medio') {
-    numberSquare.length = 81
+}else if (difficoltà === 'medio') {
+    lunghezza = 81
 
-}else if (difficoltà = 'difficile') {
-    numberSquare.length = 49
+}else if (difficoltà === 'difficile') {
+    lunghezza = 49
 }
+
+
+for (let i = 1; i <= lunghezza; i++) {
+    // i è la posizione number è il contenuto
+
+    numberSquare.push(i)
+    
+}
+
+
+console.log(numberSquare);
+
+
+
+
