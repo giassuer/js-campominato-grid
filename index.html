@@ -19,25 +19,24 @@
                 </div>
             </div>
             <div class="header-right">
-                <span>Difficoltà</span>
                 <div class="menu"> 
-                        <fieldset>
-                            <section>
-                                <option value="">Facile</option>
-                                <option value="">Medio</option>
-                                <option value="">Difficile</option>
-                            </section>
-                        </fieldset>
-                </div>
-                <div class="button">
-                    Play
+                    <label for="">Difficoltà</label>
+                        <select name="" id="select-level">
+                            <option value="1">Facile</option>
+                            <option value="2">Medio</option>
+                            <option value="3">Difficile</option>
+                        </select>
+                        <button id="play-button">Play</button>
                 </div>
             </div>
         </header>
 
         <!-- main -->
         <main>
-            <div id="grid-game" class="grid">
+
+            <h2 id="title" class="">Seleziona una difficoltà per generare la griglia</h2>
+
+            <div id="grid-game" class="grid hidden">
 
                 <!-- <div class="square">
                     <span>1</span>

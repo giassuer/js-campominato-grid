@@ -8,36 +8,66 @@
 // Scriviamo prima cosa vogliamo fare passo passo in italiano, dividiamo il lavoro in micro problemi.
 
 
-let numberSquare = [];
+const playButton = document.getElementById('play-button');
+playButton.addEventListener('click', startGame);
 
-console.log(numberSquare);
+function startGame() {
+    const title = document.getElementById('title');
+    title.classList.add('hidden')
 
-let lunghezza = 0;
+    const gridGame = document.getElementById('grid-game');
+    gridGame.classList.remove('hidden')
+    gridGame.innerHTML = '';
 
+    const levelDifficulty = parseInt(document.getElementById('select-level').value);
 
-let difficoltà = 'facile';
+    let gridMaxNumber;
 
+    let gridMaxLength;
 
-if (difficoltà === 'facile') {
-    lunghezza = 100
+    if (levelDifficulty === 1) {
+        gridMaxNumber = 100;
+        gridMaxLength = 10;  
+
+    }else if (levelDifficulty === 2) {
+        gridMaxNumber = 81;
+        gridMaxLength = 9; 
+        
+    }else if (levelDifficulty === 3) {
+        gridMaxNumber = 49;
+        gridMaxLength = 7; 
+        
+    }
+
+    for (let i = 1; i <= gridMaxNumber; i++) {
+        
+        const newSquare = generateSquare(i, gridMaxLength);
+
+        newSquare.addEventListener('click',clicked )
+
+        gridGame.appendChild(newSquare)
+        
+    }
     
-}else if (difficoltà === 'medio') {
-    lunghezza = 81
+}
 
-}else if (difficoltà === 'difficile') {
-    lunghezza = 49
+function clicked() {
+    this.classList.add('active');
 }
 
 
-for (let i = 1; i <= lunghezza; i++) {
-    // i è la posizione number è il contenuto
 
-    numberSquare.push(i)
+
+function generateSquare(generateNumber, gridSize) {
     
+    const square = document.createElement('div');
+    square.classList.add('square')
+    square.innerHTML = `<span>${generateNumber}</span>`;
+    square.style.width = `calc(100% / ${gridSize})`;
+    square.style.height = `calc(100% / ${gridSize})`;
+
+    return square
 }
-
-
-console.log(numberSquare);
 
 
 
